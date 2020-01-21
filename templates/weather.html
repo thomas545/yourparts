@@ -1,0 +1,24 @@
+{% load rest_framework %}
+
+<html><body>
+<h1>Cities</h1>
+<ul>
+    {% for city in weather %}
+    <li>{{ weather.city }}</li>
+    {% endfor %}
+</ul>
+<ul>
+
+    <li>{{ response.success }}</li>
+
+</ul> -->
+
+<ul>
+    <form action="{% url 'weather' %}" method="POST">
+        {% csrf_token %}
+        {% render_form serializer %}
+        <input type="submit" value="Save">
+    </form>
+</ul>
+
+</body></html>
